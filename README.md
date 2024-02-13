@@ -1,7 +1,7 @@
-# Seamless Data Replication: Integrating GitHub Data with DynamoDB via S3 Bucket Across Regions
+# Seamless Data Replication For Data Sharing: Integrating Data with DynamoDB via S3 Bucket Across Regions
 
 ## Abstract
-The following architecture describes a seamless data replication process that integrates GitHub data with DynamoDB via S3 bucket across different AWS regions. This process enables efficient storage of data in NoSQL format using DynamoDB. When a file is uploaded to the S3 bucket in the "nv-us-east-1" region, it triggers a Lambda function that stores the data in both DynamoDB and another S3 bucket in the "Mumbai-ap-south-1" region. Another Lambda function in the Mumbai region is triggered to store the data in DynamoDB as well.
+The following architecture describes a seamless data replication process that integrates data with DynamoDB via S3 bucket across different AWS regions. This process enables efficient storage of data in NoSQL format using DynamoDB. When a file is uploaded to the S3 bucket in the "nv-us-east-1" region, it triggers a Lambda function that stores the data in both DynamoDB and another S3 bucket in the "Mumbai-ap-south-1" region. Another Lambda function in the Mumbai region is triggered to store the data in DynamoDB as well.
 
 Additionally, when data is uploaded, information is sent to the user's email through SNS via Email. The uploaded data is also stored in a GitHub repository using an EC2 instance within the VPC of "nv-us-east-1" region with IAM role permissions for S3 full access and DynamoDB full access. The EC2 instance creates a file and loads it into the S3 bucket.
 
